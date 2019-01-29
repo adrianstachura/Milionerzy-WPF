@@ -1,0 +1,55 @@
+﻿<Window x:Class="Milionerzy_WPF.GameWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Milionerzy_WPF"
+        mc:Ignorable="d"
+        Title="GameWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="30*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="10*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <Viewbox  Grid.Row="1" Grid.Column="0" Margin="10,46,34,10" Grid.RowSpan="3">
+            <TextBlock x:Name="Question" Height="50" FontSize="6" TextWrapping="Wrap" TextAlignment="Center" Text="What PictureBox SizeMode property uniformly resizes to fit inside the image box?" Width="120"/>
+        </Viewbox>
+
+       
+                <Viewbox Grid.Row="3" Grid.Column="0">
+            <Grid Width="258">
+                <Button Click="A1" FontSize ="7" x:Name="Answer1" Content="O1" HorizontalAlignment="Left" Width="73" Margin="36,0,0,0"/>
+                <Button Click="A2" FontSize ="7" x:Name="Answer2" Content="O2" HorizontalAlignment="Left" Width="73" Margin="146,0,0,0"/>
+            </Grid>
+        </Viewbox>
+
+        <Viewbox Grid.Row="5" Grid.Column="0">
+            <Grid Width="258">
+                <Button Click="A3" FontSize ="7" x:Name="Answer3" Content="O3" HorizontalAlignment="Left" Width="73" Margin="36,0,0,0"/>
+                <Button Click="A4" FontSize ="7"  x:Name="Answer4" Content="O4" HorizontalAlignment="Left" Width="73" Margin="146,0,0,0"/>
+            </Grid>
+        </Viewbox>
+        <Viewbox Grid.Column="1" Grid.Row="6">
+            <Button x:Name="End_Early" Content="Zakończ grę" Width="260" Height="23"/>
+        </Viewbox>
+
+
+
+
+
+
+
+
+
+
+    </Grid>
+</Window>
