@@ -24,8 +24,8 @@
             <TextBlock x:Name="Question" Height="50" FontSize="6" TextWrapping="Wrap" TextAlignment="Center" Text="What PictureBox SizeMode property uniformly resizes to fit inside the image box?" Width="120"/>
         </Viewbox>
 
-       
-                <Viewbox Grid.Row="3" Grid.Column="0">
+
+        <Viewbox Grid.Row="3" Grid.Column="0">
             <Grid Width="258">
                 <Button Click="A1" FontSize ="7" x:Name="Answer1" Content="O1" HorizontalAlignment="Left" Width="73" Margin="36,0,0,0"/>
                 <Button Click="A2" FontSize ="7" x:Name="Answer2" Content="O2" HorizontalAlignment="Left" Width="73" Margin="146,0,0,0"/>
@@ -39,9 +39,15 @@
             </Grid>
         </Viewbox>
         <Viewbox Grid.Column="1" Grid.Row="6">
-            <Button x:Name="End_Early" Content="Zakończ grę" Width="260" Height="23"/>
+            <Button x:Name="End_Early" Content="Zakończ grę" Width="260" Height="23" Click="button_EndEarly"/>
         </Viewbox>
+        <Viewbox Grid.Column="1" Grid.Row="1">
+            <Grid Height="221">
 
+                <TextBlock FontSize="20" Foreground="Orange" TextAlignment="Center" HorizontalAlignment="center" Margin="10,10,9.667,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="99"><Run Text="Aktualnie grasz o:"/><LineBreak/><Run Text="1 000 000 pln"/></TextBlock>
+                <TextBlock FontSize="20" Foreground="Green" TextAlignment="Center" HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="97"><Run Text="Aktualnie posiadasz:"/><LineBreak/><Run Text="250 000 pln"/></TextBlock>
+            </Grid>
+        </Viewbox>
 
 
 

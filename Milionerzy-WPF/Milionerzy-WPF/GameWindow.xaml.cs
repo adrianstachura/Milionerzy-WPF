@@ -133,7 +133,7 @@ namespace Milionerzy_WPF
             this.Close();
         }
 
-        private void FinishEarly(object sender, RoutedEventArgs e)
+        private void button_EndEarly(object sender, RoutedEventArgs e)
         {
             EndWindow Ewindow = new EndWindow();
 
@@ -142,10 +142,9 @@ namespace Milionerzy_WPF
             this.Close();
         }
 
-        
+        private void Viewbox_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+        {
 
-
-
-
+        }
     }
 }
