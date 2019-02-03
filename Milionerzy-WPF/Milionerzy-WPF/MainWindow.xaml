@@ -7,6 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="bg2.jpeg" Stretch="UniformToFill"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
@@ -23,24 +26,26 @@
 
         <Viewbox Grid.Row="1">
             <Grid>
-                <TextBox TextAlignment="Center" BorderThickness="0" HorizontalAlignment="Center" VerticalAlignment="Center" Background="blue" Text="Andrzej" Width="83" Margin="-19,0,-18,0"/>
+                <TextBox TextAlignment="Center" Foreground="LightSlateGray" BorderThickness="1" BorderBrush="#FF1AA5A5" HorizontalAlignment="Center" Background="Transparent" VerticalAlignment="Center" Text="Wprowadz imie" Width="93" Margin="-19,0,-18,0"/>
             </Grid>
         </Viewbox>
 
         <Viewbox Grid.Row="3">
             <Grid>
-                <Button  Click="button_Start" Background="Green" Content="Start" Width="104" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource ButtonStyle1}"/>
+                <Button Click="button_Start" Foreground="AntiqueWhite" BorderThickness="0" Background="#FF1AA5A5" Content="Start" Width="93" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource ButtonStyle1}"/>
             </Grid>
         </Viewbox>
 
         <Viewbox Grid.Row="5">
             <Grid>
-                <Button  Click="button_Exit" FontSize="5" Background="Red" Content="Zamknij" Width="65" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="21,5,18,5" Style="{DynamicResource ButtonStyle2}"/>
+                <Button  Click="button_Exit" Foreground="AntiqueWhite" FontSize="5" BorderThickness="0" Background="#FF3A7575" Content="Zamknij" Width="65" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="21,5,18,5" Style="{DynamicResource ButtonStyle2}"/>
             </Grid>
         </Viewbox>
-
-
-
+        <Viewbox>
+            <Grid Height="50px" Width="120px">
+                <TextBlock Text="MILIONERZY" FontSize="20" HorizontalAlignment="center" VerticalAlignment="center" Foreground="#FF1AA5A5" FontFamily="Yu Gothic Light"/>
+            </Grid>
+        </Viewbox>
 
 
     </Grid>

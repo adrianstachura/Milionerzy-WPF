@@ -44,8 +44,8 @@
         <Viewbox Grid.Column="1" Grid.Row="1">
             <Grid Height="221">
 
-                <TextBlock FontSize="20" Foreground="Orange" TextAlignment="Center" HorizontalAlignment="center" Margin="10,10,9.667,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="99"><Run Text="Aktualnie grasz o:"/><LineBreak/><Run Text="1 000 000 pln"/></TextBlock>
-                <TextBlock FontSize="20" Foreground="Green" TextAlignment="Center" HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="97"><Run Text="Aktualnie posiadasz:"/><LineBreak/><Run Text="250 000 pln"/></TextBlock>
+                <TextBlock x:Name="nreward" FontSize="20" Foreground="Orange" TextAlignment="Center" HorizontalAlignment="center" Margin="11,10,8.667,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="99"><Run Text="Aktualnie grasz o:"/><LineBreak/><Run Text="1 000 000 pln"/></TextBlock>
+                <TextBlock x:Name="creward" FontSize="20" Foreground="Green" TextAlignment="Center" HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="97"><Run Text="Aktualnie posiadasz:"/><LineBreak/><Run Text="250 000 pln"/></TextBlock>
             </Grid>
         </Viewbox>
 

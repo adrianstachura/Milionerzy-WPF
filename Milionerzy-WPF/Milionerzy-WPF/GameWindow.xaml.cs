@@ -43,6 +43,8 @@ namespace Milionerzy_WPF
                 strQuestion = Questions.Quest[intQuest, 0];
                 Question.Text = strQuestion;
                 CurrentAnswers();
+                currentReward();
+                nextReward();
             }
             else
             {
@@ -141,10 +143,90 @@ namespace Milionerzy_WPF
             Ewindow.EndGameEarly();
             this.Close();
         }
-
-        private void Viewbox_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+        private void currentReward()
         {
+            switch (Score)
+            {
+                case 0: creward.Text= "Aktualnie posiadasz: \r\n 0 pln";
+                    break;
+                case 1:
+                    creward.Text = "Aktualnie posiadasz: \r\n 500 pln";
+                    break;
+                case 2:
+                    creward.Text = "Aktualnie posiadasz: \r\n 1000 pln";
+                    break;
+                case 3:
+                    creward.Text = "Aktualnie posiadasz: \r\n 2000 pln";
+                    break;
+                case 4:
+                    creward.Text = "Aktualnie posiadasz: \r\n 5000 pln";
+                    break;
+                case 5:
+                    creward.Text = "Aktualnie posiadasz: \r\n 10 000 pln";
+                    break;
+                case 6:
+                    creward.Text = "Aktualnie posiadasz: \r\n 20 000 pln";
+                    break;
+                case 7:
+                    creward.Text = "Aktualnie posiadasz: \r\n 40 000 pln";
+                    break;
+                case 8:
+                    creward.Text = "Aktualnie posiadasz: \r\n 75 000 pln";
+                    break;
+                case 9:
+                    creward.Text = "Aktualnie posiadasz: \r\n 125 000 pln";
+                    break;
+                case 10:
+                    creward.Text = "Aktualnie posiadasz: \r\n 250 000 pln";
+                    break;
+                case 11:
+                    creward.Text = "Aktualnie posiadasz: \r\n 500 000 pln";
+                    break;
+            }
+        }
 
+        private void nextReward()
+        {
+            switch (Score)
+            {
+
+                case 0:
+                    nreward.Text = "Aktualnie grasza o: \r\n 500 pln";
+                    break;
+                case 1:
+                    nreward.Text = "Aktualnie grasza o: \r\n 1000 pln";
+                    break;
+                case 2:
+                    nreward.Text = "Aktualnie grasza o: \r\n 2000 pln";
+                    break;
+                case 3:
+                    nreward.Text = "Aktualnie grasza o: \r\n 5000 pln";
+                    break;
+                case 4:
+                    nreward.Text = "Aktualnie grasza o: \r\n 10 000 pln";
+                    break;
+                case 5:
+                    nreward.Text = "Aktualnie grasza o: \r\n 20 000 pln";
+                    break;
+                case 6:
+                    nreward.Text = "Aktualnie grasza o: \r\n 40 000 pln";
+                    break;
+                case 7:
+                    nreward.Text = "Aktualnie grasza o: \r\n 75 000 pln";
+                    break;
+                case 8:
+                    nreward.Text = "Aktualnie grasza o: \r\n 125 000 pln";
+                    break;
+                case 9:
+                    nreward.Text = "Aktualnie grasza o: \r\n 250 000 pln";
+                    break;
+                case 10:
+                    nreward.Text = "Aktualnie grasz o: \r\n 500 000 pln";
+                    break;
+                case 11:
+                    nreward.Text = "Aktualnie grasz o: \r\n 1 000 000 pln";
+                    break;
+            }
         }
     }
 }
