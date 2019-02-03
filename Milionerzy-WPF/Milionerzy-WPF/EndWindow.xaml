@@ -23,8 +23,8 @@
 
         <Viewbox Grid.Row="2">
             <Grid Width="176">
-                <Button Click="Exit" FontSize="7" Content="EXIT" HorizontalAlignment="Right" Height="14" Width="45" Margin="0,0,10,0"/>
-                <Button Click="Restart" FontSize="7" Content="Restart" HorizontalAlignment="Left" Width="45" Height="14" VerticalAlignment="Top" Margin="10,0,0,0" />
+                <Button Click="Exit" FontSize="7" Content="EXIT" HorizontalAlignment="Right" Height="14" Width="45" Margin="0,0,10,0" Style="{DynamicResource EarlyButton}"/>
+                <Button Click="Restart" FontSize="7" Content="Restart" HorizontalAlignment="Left" Width="45" Height="14" VerticalAlignment="Top" Margin="10,0,0,0" Style="{DynamicResource RoundedButton}" />
             </Grid>
 
         </Viewbox>
