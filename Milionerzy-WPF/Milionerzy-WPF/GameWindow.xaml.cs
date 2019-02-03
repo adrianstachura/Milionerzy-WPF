@@ -111,6 +111,8 @@ namespace Milionerzy_WPF
             }
         }
 
+     
+
         private void Refresh(object sender, RoutedEventArgs e)
         {
             CurrentQuestion();
@@ -122,6 +124,7 @@ namespace Milionerzy_WPF
             Score++;
             Questions.Quest[intQuest, 6] = string.Empty;
             CurrentQuestion();
+            EnableButtons();
         }
 
         private void FinishGame()
@@ -141,10 +144,38 @@ namespace Milionerzy_WPF
             Ewindow.EndGameEarly();
             this.Close();
         }
+        public void Answer1Remove()
+        {
+            Answer1.Content = "";
+            Answer1.IsEnabled = false;
+        }
 
-        
+        public void Answer2Remove()
+        {
+            Answer2.Content = "";
+            Answer2.IsEnabled = false;
+        }
 
+        public void Answer3Remove()
+        {
+            Answer3.Content = "";
+            Answer3.IsEnabled = false;
+        }
 
+        public void Answer4Remove()
+        {
+            Answer4.Content = "";
+            Answer4.IsEnabled = false;
+        }
+
+    
+        private void EnableButtons()
+        {
+            Answer1.IsEnabled = true;
+            Answer2.IsEnabled = true;
+            Answer3.IsEnabled = true;
+            Answer4.IsEnabled = true;
+        }
 
 
     }
