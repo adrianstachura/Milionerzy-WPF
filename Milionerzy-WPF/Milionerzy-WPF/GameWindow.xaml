@@ -21,7 +21,7 @@
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
         <Viewbox  Grid.Row="1" Grid.Column="0" Margin="10,46,34,10" Grid.RowSpan="3">
-            <TextBlock x:Name="Question" Height="50" FontSize="6" TextWrapping="Wrap" TextAlignment="Center" Text="What PictureBox SizeMode property uniformly resizes to fit inside the image box?" Width="120"/>
+            <TextBlock x:Name="Question" Height="50" FontSize="6" TextWrapping="Wrap" TextAlignment="Center" Text="pytanie dlugie pytanie dlugie pytanie sdnaidiasuidasudbusabduasd" Width="120"/>
         </Viewbox>
 
 
