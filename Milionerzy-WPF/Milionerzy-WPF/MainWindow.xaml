@@ -32,13 +32,13 @@
 
         <Viewbox Grid.Row="3">
             <Grid>
-                <Button Click="button_Start" Foreground="AntiqueWhite" BorderThickness="0" Background="#FF1AA5A5" Content="Start" Width="93" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource RoundedButton}"/>
+                <Button Click="button_Start" Foreground="AntiqueWhite" BorderThickness="0" Background="#FF1AA5A5" Content="Start" Width="93" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource MainWindowStartButton}"/>
             </Grid>
         </Viewbox>
 
         <Viewbox Grid.Row="5">
             <Grid>
-                <Button  Click="button_Exit" Foreground="AntiqueWhite" FontSize="5" BorderThickness="0" Background="#FF3A7575" Content="Zamknij" Width="65" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="21,5,18,5" Style="{DynamicResource EarlyButton}"/>
+                <Button  Click="button_Exit" Foreground="AntiqueWhite" FontSize="5" BorderThickness="0" Background="#FF3A7575" Content="Zamknij" Width="65" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Margin="21,5,18,5" Style="{DynamicResource MainWindowEndButton}"/>
             </Grid>
         </Viewbox>
         <Viewbox>

@@ -23,6 +23,11 @@ namespace Milionerzy_WPF
 
         public static int intQuest = 0;
         public static int Score = 0;
+        List<int> mylist = new List<int>();
+
+
+
+
 
 
         public GameWindow()
@@ -32,19 +37,28 @@ namespace Milionerzy_WPF
         }
 
 
-        private void CurrentQuestion()
-        {
+
+private void CurrentQuestion()
+        {   
+        
             if (Score < 12)
             {
                 Random rand = new Random();
-                int randomQuestion = rand.Next(Questions.Quest.GetLength(0));
+                int randomQuestion = 0;
+                do {
+                    randomQuestion = rand.Next(Questions.Quest.GetLength(0));
+                }while(mylist.Contains(randomQuestion));
+               
                 string strQuestion;
                 intQuest = randomQuestion;
                 strQuestion = Questions.Quest[intQuest, 0];
                 Question.Text = strQuestion;
+                mylist.Add(randomQuestion);
+                
                 CurrentAnswers();
                 currentReward();
                 nextReward();
+                
             }
             else
             {
@@ -128,11 +142,12 @@ namespace Milionerzy_WPF
 
         private void FinishGame()
         {
-            
+       
             EndWindow EWindow = new EndWindow();
             EWindow.Show();
             EWindow.EndGame();
             this.Close();
+
         }
 
         private void button_EndEarly(object sender, RoutedEventArgs e)
