@@ -23,6 +23,7 @@ namespace Milionerzy_WPF
 {"Z którego kraju pochodziła Miss Universe i aktorka Anita Ekberg?", "Szwecji", "Norwegii", "Danii", "Holandii", "1",  String.Empty},
 {"Która stacja telewizyjna emituje serial Trudne sprawy?", "TVN", "Polsat", "TVP1", "Puls", "2",  String.Empty},
 {"Kto prowadził program Kłamczuch?", "H.Urbanski", "A.Stachura", "O.Lubaszenko", "K.Ibisz", "4",  String.Empty},
+{"Jak firma jest odpowiedzialna za karty graficzne z serii gtx", "AMD", "Nevada", "Intel", "Nvidia", "4",  String.Empty},
 {"Jak ma na imię Żebrowski, polski aktor?", "Michał", "Olaf", "Adrian", "Krzysztof", "1",  String.Empty} };
 
 

@@ -13,7 +13,7 @@
         </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="70*"/>
-            
+
             <ColumnDefinition Width="30*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -51,6 +51,13 @@
 
                 <TextBlock x:Name="nreward" FontSize="20" Foreground="Orange" TextAlignment="Center" HorizontalAlignment="center" Margin="11,10,8.667,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="99"><Run Text="Aktualnie grasz o:"/><LineBreak/><Run Text="1 000 000 pln"/></TextBlock>
                 <TextBlock x:Name="creward" FontSize="20" Foreground="Green" TextAlignment="Center" HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="97"><Run Text="Aktualnie posiadasz:"/><LineBreak/><Run Text="250 000 pln"/></TextBlock>
+            </Grid>
+        </Viewbox>
+        <Viewbox Grid.Column="1" Grid.Row="0">
+            <Grid>
+                <Button x:Name="PH" ToolTip="Wykonujsze telefon do przyjaciela ktory pomaga Ci z udzieleniem odpowiedzi, ale uwazaj moze sie mylic!" Click="phone" Content="Telefon" HorizontalAlignment="Left" Margin="9.667,10,0,0" VerticalAlignment="Top" Width="61"/>
+                <Button x:Name="FT" ToolTip="Odrzuca" Click="fiftyfifty" Content="50/50" HorizontalAlignment="Left" Margin="89.667,10,0,0" VerticalAlignment="Top" Width="60"/>
+                <Button x:Name="rq" Content="reroll" Click="reroll" HorizontalAlignment="Left" Margin="167.667,10,0,0" VerticalAlignment="Top" Width="60"/>
             </Grid>
         </Viewbox>
 
