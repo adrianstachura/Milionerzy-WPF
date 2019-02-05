@@ -125,5 +125,8 @@
   <ItemGroup>
     <Resource Include="phone.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="reroll.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

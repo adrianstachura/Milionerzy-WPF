@@ -103,10 +103,9 @@ namespace Milionerzy_WPF
 
         private void Restart(object sender, RoutedEventArgs e)
         {
-            Window MWindow = new MainWindow();
-            GameWindow.Score = 0;
-            MWindow.Show();
+            System.Diagnostics.Process.Start(Application.ResourceAssembly.Location);
             this.Close();
+           
         }
 
 

@@ -25,15 +25,26 @@ namespace Milionerzy_WPF
             InitializeComponent();
         }
 
+        public static string name;
         private void button_Start(object sender, RoutedEventArgs e)
         {
+            if(namebox.Text != "" || namebox.Text !="Wprowadz imie")
+            {
+
+            name = namebox.Text;
             Window gWindow = new GameWindow();
             gWindow.Show();
             this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Wprowadz imie!");
+            }
         }
         private void button_Exit(object sender, RoutedEventArgs e)
         {
             this.Close();
+            
         }
     }
 }

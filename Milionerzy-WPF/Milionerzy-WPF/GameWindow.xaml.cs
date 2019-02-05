@@ -439,7 +439,7 @@ private void CurrentQuestion()
         }
         private void reroll(object sender, RoutedEventArgs e)
         {
-           // RQ.IsEnabled = false;
+            RQ.IsEnabled = false;
             CurrentQuestion();
         }
     }

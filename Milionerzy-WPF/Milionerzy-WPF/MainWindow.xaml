@@ -26,7 +26,7 @@
 
         <Viewbox Grid.Row="1">
             <Grid>
-                <TextBox TextAlignment="Center" Foreground="LightSlateGray" BorderThickness="1" BorderBrush="#FF1AA5A5" HorizontalAlignment="Center" Background="Transparent" VerticalAlignment="Center" Text="Wprowadz imie" Width="93" Margin="-19,0,-18,0"/>
+                <TextBox x:Name="namebox" TextAlignment="Center" Foreground="LightSlateGray" BorderThickness="1" BorderBrush="#FF1AA5A5" HorizontalAlignment="Center" Background="Transparent" VerticalAlignment="Center" Text="Wprowadz imie" Width="93" Margin="-19,0,-18,0"/>
             </Grid>
         </Viewbox>
 

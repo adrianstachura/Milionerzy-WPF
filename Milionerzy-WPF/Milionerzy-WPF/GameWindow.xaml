@@ -49,17 +49,24 @@
         <Viewbox Grid.Column="1" Grid.Row="1">
             <Grid Height="221">
 
-                <TextBlock x:Name="nreward" FontSize="20" Foreground="Orange" TextAlignment="Center" HorizontalAlignment="center" Margin="11,10,8.667,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="99"><Run Text="Aktualnie grasz o:"/><LineBreak/><Run Text="1 000 000 pln"/></TextBlock>
-                <TextBlock x:Name="creward" FontSize="20" Foreground="Green" TextAlignment="Center" HorizontalAlignment="Left" Margin="10,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="97"><Run Text="Aktualnie posiadasz:"/><LineBreak/><Run Text="250 000 pln"/></TextBlock>
+                <Rectangle Fill="#FF1AA5A5" HorizontalAlignment="Left" Height="60" Margin="10,96,0,0" Stroke="#ffd166" VerticalAlignment="Top" Width="186" RadiusX="10" RadiusY="10"/>
+                <TextBlock x:Name="nreward" FontSize="20" Foreground="#ef476f" TextAlignment="Center" HorizontalAlignment="center" Margin="11,96,8.667,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="60"><Run Text="Aktualnie grasz o:"/><LineBreak/><Run Text="1 000 000 pln"/></TextBlock>
+                <Rectangle Fill="#FF1AA5A5" HorizontalAlignment="Left" Height="60" Margin="11,161,0,0" Stroke="#109648" VerticalAlignment="Top" Width="186" RadiusX="10" RadiusY="10"/>
+                <TextBlock x:Name="creward" FontSize="20" Foreground="#8af3ff" TextAlignment="Center" HorizontalAlignment="Left" Margin="11,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="60"><Run Text="Aktualnie posiadasz:"/><LineBreak/><Run Text="250 000 pln"/></TextBlock>
             </Grid>
         </Viewbox>
         <Viewbox Grid.Column="1" Grid.Row="0">
-            <Grid>
-                <Button x:Name="PH" ToolTip="Wykonujsze telefon do przyjaciela ktory pomaga Ci z udzieleniem odpowiedzi, ale uwazaj moze sie mylic!" Click="phone" Content="Telefon" HorizontalAlignment="Left" Margin="9.667,10,0,0" VerticalAlignment="Top" Width="61"/>
-                <Button x:Name="FT" ToolTip="Odrzuca" Click="fiftyfifty" Content="50/50" HorizontalAlignment="Left" Margin="89.667,10,0,0" VerticalAlignment="Top" Width="60"/>
-                <Button x:Name="rq" Content="reroll" Click="reroll" HorizontalAlignment="Left" Margin="167.667,10,0,0" VerticalAlignment="Top" Width="60"/>
+
+            <Grid Width="567" >
+                <Button x:Name="PH" Click="phone" ToolTip="Telefon do przyjaciela, ale uwazaj moze sie mylic!" Width="80" Height="80" Margin="136,0,351,0" Style="{DynamicResource PhoneButton}"/>
+
+                <Button x:Name="RQ" Click="reroll" ToolTip="wylosuj nowe pytanie" Width="80" Height="80" Margin="237,0,250,0" Style="{DynamicResource RerollButton}" RenderTransformOrigin="0.842,0.486"/>
+
+                <Button x:Name="FT" Click="fiftyfifty" ToolTip="Usun dwie bledne odpowiedzi" Width="80" Height="80" Margin="342,0,145,0" Style="{DynamicResource FiftyButton}" FontSize="25" Foreground="Black" Content="50/50"/>
+
             </Grid>
         </Viewbox>
+
 
 
 

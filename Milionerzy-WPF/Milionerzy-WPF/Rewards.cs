@@ -8,7 +8,7 @@ namespace Milionerzy_WPF
 {
     class Rewards
     {
-        public static string Reward0 = "Gratulacje!" + "Wygrałes 0zł";
+        public static string Reward0 = "Gratulacje, " + MainWindow.name + "! Wygrałes 0zł";
 
         public static string Reward1 = "Gratulacje! Wygrałes 500zł!";
 
