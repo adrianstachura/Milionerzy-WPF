@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Milionerzy_WPF"
         mc:Ignorable="d"
-        Title="EndWindow" Height="450" Width="800">
+        Title="EndWindow" Height="450" Width="800" WindowState="Maximized">
     <Grid>
-
+        <Grid.Background>
+            <ImageBrush ImageSource="bg2.jpeg" Stretch="UniformToFill"/>
+        </Grid.Background>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="20*"/>

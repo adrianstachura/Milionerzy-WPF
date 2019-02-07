@@ -23,6 +23,7 @@ namespace Milionerzy_WPF
 
         public static int intQuest = 0;
         public static int Score = 0;
+        public static int fifty = 0;
         List<int> mylist = new List<int>();
 
 
@@ -254,51 +255,77 @@ private void CurrentQuestion()
             string odp3 = "2";
             string odp4 = "3";
             string odp5 = "4";
+           
 
+                if (ph1 <= 35)
+                {
+                    MessageBox.Show("Jestem pewien ze jest to odpowiedz " + Questions.Quest[intQuest, odp1]);
+                }
+                else if (ph1 >= 36 && ph1 <= 70)
+                {
+                    MessageBox.Show("Wydaje mi sie ze jest to odpowiedz " + Questions.Quest[intQuest, odp1]);
+                }
+                else if (ph1 >= 71 && ph1 <= 80)
+                {
+                    MessageBox.Show("Wydaje mi sie, ze jest to odpowiedz " + Questions.Quest[intQuest, odp1] + ", ale reki sobie nie dam uciac.");
+                }
+                else if (ph1 >= 81 && ph1 <= 90)
+                {
+                    MessageBox.Show("Na twoim miejscu zaznaczylbym odpowiedz " + Questions.Quest[intQuest, odp1] + ", ale zawsze bylem slaby w takich grach.");
+                }
+                else if (ph1 >= 91 && ph1 <= 99)
+                {
+                    if (fifty == 0)
+                    {
+                        if (odp2 == odp1.ToString())
+                        {
+                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Questions.Quest[intQuest, 2]);
+                        }
+                        else if (odp3 == odp1.ToString())
+                        {
+                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz: " + Questions.Quest[intQuest, 3]);
+                        }
+                        else if (odp4 == odp1.ToString())
+                        {
+                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Questions.Quest[intQuest, 4]);
+                        }
+                        else if (odp5 == odp1.ToString())
+                        {
+                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Questions.Quest[intQuest, 1]);
+                        }
+                    }
+                    else
+                    {
+                        if (odp2 == odp1.ToString())
+                        {
+                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Answer2.Content + Answer3.Content + Answer4.Content);
+                        }
+                        else if (odp3 == odp1.ToString())
+                        {
+                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Answer1.Content + Answer3.Content + Answer4.Content);
+                        }
+                        else if (odp4 == odp1.ToString())
+                        {
+                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Answer1.Content + Answer2.Content + Answer4.Content);
+                        }
+                        else if (odp5 == odp1.ToString())
+                        {
+                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Answer1.Content + Answer2.Content + Answer3.Content);
+                        }
+                    }
+                }
+                else if (ph1 > 99)
+                {
+                    MessageBox.Show("Przepraszamy, numer do ktorego probujesz sie dodzwonic nie istnieje...");
+                }
+            }
+           
+        
 
-            if (ph1 <= 35)
-            {
-                MessageBox.Show("Jestem pewien ze jest to odpowiedz " + Questions.Quest[intQuest, odp1]);
-            }
-            else if(ph1 >= 36 && ph1 <= 70)
-            {
-                MessageBox.Show("Wydaje mi sie ze jest to odpowiedz " + Questions.Quest[intQuest, odp1]);
-            }
-            else if(ph1 >= 71 && ph1 <=80)
-            {
-                MessageBox.Show("Wydaje mi sie, ze jest to odpowiedz " + Questions.Quest[intQuest, odp1] + ", ale reki sobie nie dam uciac.");
-            }
-            else if(ph1 >= 81 && ph1 <= 90)
-            {
-                MessageBox.Show("Na twoim miejscu zaznaczylbym odpowiedz " + Questions.Quest[intQuest, odp1] + ", ale zawsze bylem slaby w takich grach.");
-            }
-            else if(ph1 >= 91 && ph1 <= 99)
-            {
-                if (odp2 == odp1.ToString())
-                {
-                    MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Questions.Quest[intQuest, 2]);
-                }
-                else if(odp3 == odp1.ToString())
-                {
-                    MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz: " + Questions.Quest[intQuest, 3]);
-                }
-                else if (odp4 == odp1.ToString())
-                {
-                    MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Questions.Quest[intQuest, 4]);
-                }
-                else if (odp5 == odp1.ToString())
-                {
-                    MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Questions.Quest[intQuest, 1]);
-                }
-            }
-            else if(ph1 > 99)
-            {
-                MessageBox.Show("Przepraszamy, numer do ktorego probujesz sie dodzwonic nie istnieje...");
-            }
-        }
         private void fiftyfifty(object sender, RoutedEventArgs e)
         {
             FT.IsEnabled = false;
+            fifty++;
             int an = 0;
             int a1 = 0;
             int a2 = 0;
@@ -441,6 +468,7 @@ private void CurrentQuestion()
         {
             RQ.IsEnabled = false;
             CurrentQuestion();
+            EnableAnswers();
         }
     }
 

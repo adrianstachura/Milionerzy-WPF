@@ -28,7 +28,8 @@ namespace Milionerzy_WPF
         public static string name;
         private void button_Start(object sender, RoutedEventArgs e)
         {
-            if(namebox.Text != "" || namebox.Text !="Wprowadz imie")
+            string namecheck = namebox.Text;
+            if(namecheck != "Wprowadz imie" && namecheck != String.Empty)
             {
 
             name = namebox.Text;
@@ -38,6 +39,7 @@ namespace Milionerzy_WPF
             }
             else
             {
+                
                 MessageBox.Show("Wprowadz imie!");
             }
         }
