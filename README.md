@@ -7,13 +7,13 @@
 
 **Wykorzystane technologie oraz narzędzia:**
 
-*WPF
+* WPF
 
-*xaml
+* xaml
 
-*C#
+* C#
 
-*Visual Studio Installer
+* Visual Studio Installer
 
 # Wstęp
 
