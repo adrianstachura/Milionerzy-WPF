@@ -6,15 +6,16 @@
         
         xmlns:local="clr-namespace:Milionerzy_WPF"
         mc:Ignorable="d"
-        Title="GameWindow" Height="450" Width="800" WindowState="Maximized">
+        Title="GameWindow" Height="450" Width="800" WindowState="Maximized" Icon="240px-Milionerzy.ico">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="bg2.jpeg" Stretch="UniformToFill"/>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="224*"/>
+            <ColumnDefinition Width="53*"/>
 
-            <ColumnDefinition Width="30*"/>
+            <ColumnDefinition Width="119*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="10*"/>
@@ -25,28 +26,28 @@
             <RowDefinition Height="10*"/>
             <RowDefinition Height="5*"/>
         </Grid.RowDefinitions>
-        <Viewbox  Grid.Row="1" Grid.Column="0" Margin="10,46,34,10" Grid.RowSpan="3">
+        <Viewbox  Grid.Row="1" Grid.Column="0" Margin="10,46,34,10" Grid.RowSpan="3" Grid.ColumnSpan="2">
             <TextBlock x:Name="Question" Height="50" FontSize="6" TextWrapping="Wrap" TextAlignment="Center" Text="pytanie dlugie pytanie dlugie pytanie sdnaidiasuidasudbusabduasd" Width="120"/>
         </Viewbox>
 
 
-        <Viewbox Grid.Row="3" Grid.Column="0">
+        <Viewbox Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid Width="258">
                 <Button Click="A1" FontSize ="7" x:Name="Answer1" Content="O1" HorizontalAlignment="Left" Width="73" Margin="36,0,0,0" Style="{DynamicResource RoundedButton}"/>
                 <Button Click="A2" FontSize ="7" x:Name="Answer2" Content="O2" HorizontalAlignment="Left" Width="73" Margin="146,0,0,0" Style="{DynamicResource RoundedButton}"/>
             </Grid>
         </Viewbox>
 
-        <Viewbox Grid.Row="5" Grid.Column="0">
+        <Viewbox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2">
             <Grid Width="258">
                 <Button Click="A3" FontSize ="7" x:Name="Answer3" Content="O3" HorizontalAlignment="Left" Width="73" Margin="36,0,0,0" Style="{DynamicResource RoundedButton}"/>
                 <Button Click="A4" FontSize ="7"  x:Name="Answer4" Content="O4" HorizontalAlignment="Left" Width="73" Margin="146,0,0,0" Style="{DynamicResource RoundedButton}"/>
             </Grid>
         </Viewbox>
-        <Viewbox Grid.Column="1" Grid.Row="6">
+        <Viewbox Grid.Column="2" Grid.Row="6">
             <Button x:Name="End_Early" Content="Zakończ grę" Width="260" Height="23" Click="button_EndEarly" Style="{DynamicResource EarlyButton}"/>
         </Viewbox>
-        <Viewbox Grid.Column="1" Grid.Row="1">
+        <Viewbox Grid.Column="2" Grid.Row="1">
             <Grid Height="221">
 
                 <Rectangle Fill="#FF1AA5A5" HorizontalAlignment="Left" Height="60" Margin="10,96,0,0" Stroke="#ffd166" VerticalAlignment="Top" Width="186" RadiusX="10" RadiusY="10"/>
@@ -55,7 +56,7 @@
                 <TextBlock x:Name="creward" FontSize="20" Foreground="#8af3ff" TextAlignment="Center" HorizontalAlignment="Left" Margin="11,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187" Height="60"><Run Text="Aktualnie posiadasz:"/><LineBreak/><Run Text="250 000 pln"/></TextBlock>
             </Grid>
         </Viewbox>
-        <Viewbox Grid.Column="1" Grid.Row="0">
+        <Viewbox Grid.Column="2" Grid.Row="0">
 
             <Grid Width="567" >
                 <Button x:Name="PH"  Click="phone" ToolTip="Telefon do przyjaciela, ale uwazaj moze sie mylic!" Width="80" Height="80" Margin="136,0,351,0" Style="{DynamicResource PhoneButton}"/>
