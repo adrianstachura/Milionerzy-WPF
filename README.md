@@ -6,6 +6,7 @@
 **Autorzy:** Olaf Szadkowski, Adrian Stachura
 
 **Wykorzystane technologie oraz narzędzia:**
+
 *WPF
 *xaml
 *C#
