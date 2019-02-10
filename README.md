@@ -3,6 +3,7 @@
 **Projekt semestralny z programowania obiektowego w C#.**
 
 **Prosta gra na podstawie teleturnieju Milionerzy**
+
 **Autorzy:** Olaf Szadkowski, Adrian Stachura
 
 **Wykorzystane technologie oraz narzędzia:**
