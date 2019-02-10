@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using MilionerzyLibrary;
 
 namespace Milionerzy_WPF
 {
@@ -25,21 +26,21 @@ namespace Milionerzy_WPF
             InitializeComponent();
         }
 
-        public static string name;
+       
+        
+        
         private void button_Start(object sender, RoutedEventArgs e)
         {
             string namecheck = namebox.Text;
-            if(namecheck != "Wprowadz imie" && namecheck != String.Empty)
+            if(namecheck != String.Empty)
             {
-
-            name = namebox.Text;
-            Window gWindow = new GameWindow();
-            gWindow.Show();
+                User.Name = namebox.Text;
+                Window gWindow = new GameWindow();
+                gWindow.Show();
             this.Close();
             }
             else
             {
-                
                 MessageBox.Show("Wprowadz imie!");
             }
         }

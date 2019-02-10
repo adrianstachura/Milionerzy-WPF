@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.28010.2046
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Milionerzy-WPF", "Milionerzy-WPF\Milionerzy-WPF.csproj", "{622046CC-6721-41DC-A5F1-6DA62858E6A8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilionerzyLibrary", "MilionerzyLibrary\MilionerzyLibrary.csproj", "{3FDBFD22-3E39-442F-AF6B-5CCB17C39802}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MilionerzyLibraryTest", "MilionerzyLibraryTest\MilionerzyLibraryTest.csproj", "{F6269A9E-143F-4BDB-B0F7-EC1E0A044D26}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{622046CC-6721-41DC-A5F1-6DA62858E6A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{622046CC-6721-41DC-A5F1-6DA62858E6A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{622046CC-6721-41DC-A5F1-6DA62858E6A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FDBFD22-3E39-442F-AF6B-5CCB17C39802}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FDBFD22-3E39-442F-AF6B-5CCB17C39802}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FDBFD22-3E39-442F-AF6B-5CCB17C39802}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FDBFD22-3E39-442F-AF6B-5CCB17C39802}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6269A9E-143F-4BDB-B0F7-EC1E0A044D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6269A9E-143F-4BDB-B0F7-EC1E0A044D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6269A9E-143F-4BDB-B0F7-EC1E0A044D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6269A9E-143F-4BDB-B0F7-EC1E0A044D26}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

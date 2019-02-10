@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MilionerzyLibrary;
 
 namespace Milionerzy_WPF
 {
@@ -19,66 +20,57 @@ namespace Milionerzy_WPF
     /// </summary>
     public partial class GameWindow : Window
     {
-
-
-        public static int intQuest = 0;
+        public static int QuestionNumber = 0;
         public static int Score = 0;
         public static int fifty = 0;
         List<int> mylist = new List<int>();
-
-
-
-
-
 
         public GameWindow()
         {
             InitializeComponent();
             CurrentQuestion();
         }
-
-
-
-private void CurrentQuestion()
+        //losowanie aktualnego pytania z bazy pytań
+        private void CurrentQuestion()
         {   
-        
-            if (Score < 12)
+         if (Score < 12)
             {
                 Random rand = new Random();
                 int randomQuestion = 0;
+                // losowanie pytania przy sprawdzeniu czy już nie wystąpiło
                 do {
                     randomQuestion = rand.Next(Questions.Quest.GetLength(0));
                 }while(mylist.Contains(randomQuestion));
                
                 string strQuestion;
-                intQuest = randomQuestion;
-                strQuestion = Questions.Quest[intQuest, 0];
+                QuestionNumber = randomQuestion;
+                strQuestion = Questions.Quest[QuestionNumber, 0];
                 Question.Text = strQuestion;
                 mylist.Add(randomQuestion);
-                
                 CurrentAnswers();
                 currentReward();
                 nextReward();
-                
             }
             else
             {
                 FinishGame();
             }
-        }
-
+        }   
+        
+        //Przypisanie przyciskom odpowiedzi do aktualnego pytania
         private void CurrentAnswers()
         {
-            Answer1.Content = Questions.Quest[intQuest, 1];
-            Answer2.Content = Questions.Quest[intQuest, 2];
-            Answer3.Content = Questions.Quest[intQuest, 3];
-            Answer4.Content = Questions.Quest[intQuest, 4];
+            Answer1.Content = Questions.Quest[QuestionNumber, 1];
+            Answer2.Content = Questions.Quest[QuestionNumber, 2];
+            Answer3.Content = Questions.Quest[QuestionNumber, 3];
+            Answer4.Content = Questions.Quest[QuestionNumber, 4];
         }
 
+        //fukncje A1-4 przypisuje odpowiednią wartość do pustego stringa w tablicy, a następnie porównują z poprawną odpowiedzią
         private void A1(object sender, RoutedEventArgs e)
         {
-            Questions.Quest[intQuest, 6] = "1";
-            if (Questions.Quest[intQuest, 6] == Questions.Quest[intQuest, 5])
+            Questions.Quest[QuestionNumber, 6] = "1";
+            if (Questions.Quest[QuestionNumber, 6] == Questions.Quest[QuestionNumber, 5])
             {
                 NextQuestion();
             }
@@ -90,8 +82,8 @@ private void CurrentQuestion()
 
         private void A2(object sender, RoutedEventArgs e)
         {
-            Questions.Quest[intQuest, 6] = "2";
-            if (Questions.Quest[intQuest, 6] == Questions.Quest[intQuest, 5])
+            Questions.Quest[QuestionNumber, 6] = "2";
+            if (Questions.Quest[QuestionNumber, 6] == Questions.Quest[QuestionNumber, 5])
             {
                 NextQuestion();
             }
@@ -103,8 +95,8 @@ private void CurrentQuestion()
 
         private void A3(object sender, RoutedEventArgs e)
         {
-            Questions.Quest[intQuest, 6] = "3";
-            if (Questions.Quest[intQuest, 6] == Questions.Quest[intQuest, 5])
+            Questions.Quest[QuestionNumber, 6] = "3";
+            if (Questions.Quest[QuestionNumber, 6] == Questions.Quest[QuestionNumber, 5])
             {
                 NextQuestion();
             }
@@ -116,8 +108,8 @@ private void CurrentQuestion()
 
         private void A4(object sender, RoutedEventArgs e)
         {
-            Questions.Quest[intQuest, 6] = "4";
-            if (Questions.Quest[intQuest, 6] == Questions.Quest[intQuest, 5])
+            Questions.Quest[QuestionNumber, 6] = "4";
+            if (Questions.Quest[QuestionNumber, 6] == Questions.Quest[QuestionNumber, 5])
             {
                 NextQuestion();
 
@@ -128,19 +120,17 @@ private void CurrentQuestion()
             }
         }
 
-        private void Refresh(object sender, RoutedEventArgs e)
-        {
-            CurrentQuestion();
-        }
-
+     
+        //funkcja odpowidzialna za wyświetlenie kolejnego pytania
         private void NextQuestion()
         {
             EnableAnswers();
             Score++;
-            Questions.Quest[intQuest, 6] = string.Empty;
+            Questions.Quest[QuestionNumber, 6] = string.Empty;
             CurrentQuestion();
+            fifty = 0;
         }
-
+        //funkcja odpowiedzialna za zakończenie gry, wyświetla okno z otrzymanym wynikiem
         private void FinishGame()
         {
        
@@ -150,7 +140,7 @@ private void CurrentQuestion()
             this.Close();
 
         }
-
+        //funkcja odpowiedzialna za wyjście z gry w wybranym momenice
         private void button_EndEarly(object sender, RoutedEventArgs e)
         {
             EndWindow Ewindow = new EndWindow();
@@ -159,178 +149,50 @@ private void CurrentQuestion()
             Ewindow.EndGameEarly();
             this.Close();
         }
+        // wyświetlanie aktualnie posiadanie kwoty
         private void currentReward()
         {
-            switch (Score)
-            {
-                case 0: creward.Text= "Aktualnie posiadasz: \r\n 0 pln";
-                    break;
-                case 1:
-                    creward.Text = "Aktualnie posiadasz: \r\n 500 pln";
-                    break;
-                case 2:
-                    creward.Text = "Aktualnie posiadasz: \r\n 1000 pln";
-                    break;
-                case 3:
-                    creward.Text = "Aktualnie posiadasz: \r\n 2000 pln";
-                    break;
-                case 4:
-                    creward.Text = "Aktualnie posiadasz: \r\n 5000 pln";
-                    break;
-                case 5:
-                    creward.Text = "Aktualnie posiadasz: \r\n 10 000 pln";
-                    break;
-                case 6:
-                    creward.Text = "Aktualnie posiadasz: \r\n 20 000 pln";
-                    break;
-                case 7:
-                    creward.Text = "Aktualnie posiadasz: \r\n 40 000 pln";
-                    break;
-                case 8:
-                    creward.Text = "Aktualnie posiadasz: \r\n 75 000 pln";
-                    break;
-                case 9:
-                    creward.Text = "Aktualnie posiadasz: \r\n 125 000 pln";
-                    break;
-                case 10:
-                    creward.Text = "Aktualnie posiadasz: \r\n 250 000 pln";
-                    break;
-                case 11:
-                    creward.Text = "Aktualnie posiadasz: \r\n 500 000 pln";
-                    break;
-            }
+            string t = String.Empty;
+            Rewards current = new Rewards();
+            current.showCurrent(Score, out t);
+            creward.Text = t;
         }
-
+           
+        //wyswietlanie kwoty, którą można zdobyć po dobrej odpowiedzi
         private void nextReward()
         {
-            switch (Score)
-            {
-
-                case 0:
-                    nreward.Text = "Aktualnie grasza o: \r\n 500 pln";
-                    break;
-                case 1:
-                    nreward.Text = "Aktualnie grasza o: \r\n 1000 pln";
-                    break;
-                case 2:
-                    nreward.Text = "Aktualnie grasza o: \r\n 2000 pln";
-                    break;
-                case 3:
-                    nreward.Text = "Aktualnie grasza o: \r\n 5000 pln";
-                    break;
-                case 4:
-                    nreward.Text = "Aktualnie grasza o: \r\n 10 000 pln";
-                    break;
-                case 5:
-                    nreward.Text = "Aktualnie grasza o: \r\n 20 000 pln";
-                    break;
-                case 6:
-                    nreward.Text = "Aktualnie grasza o: \r\n 40 000 pln";
-                    break;
-                case 7:
-                    nreward.Text = "Aktualnie grasza o: \r\n 75 000 pln";
-                    break;
-                case 8:
-                    nreward.Text = "Aktualnie grasza o: \r\n 125 000 pln";
-                    break;
-                case 9:
-                    nreward.Text = "Aktualnie grasza o: \r\n 250 000 pln";
-                    break;
-                case 10:
-                    nreward.Text = "Aktualnie grasz o: \r\n 500 000 pln";
-                    break;
-                case 11:
-                    nreward.Text = "Aktualnie grasz o: \r\n 1 000 000 pln";
-                    break;
-            }
+            string t = String.Empty;
+            Rewards next = new Rewards();
+            next.showNext(Score, out t);
+            nreward.Text = t;
         }
-
-        private void phone(object sender, RoutedEventArgs e)
+        //"telefon" do przyjaciela, oparty na losowości
+        private void phone(object sender,RoutedEventArgs e)
         {
-            // PH.IsEnabled = false;
+            PH.Opacity = 0.25;
+            PH.IsEnabled = false;
             Random ph = new Random();
             int ph1 = ph.Next(1, 101);
-            int odp1 = Int32.Parse(Questions.Quest[intQuest, 5]);
-            string odp2 = "1";
-            string odp3 = "2";
-            string odp4 = "3";
-            string odp5 = "4";
-           
+            string tekst = String.Empty;
+            kola phone1 = new kola();
+            phone1.phone(QuestionNumber,fifty,ph1,out tekst);
+            MessageBox.Show(tekst);
+        }
 
-                if (ph1 <= 35)
-                {
-                    MessageBox.Show("Jestem pewien ze jest to odpowiedz " + Questions.Quest[intQuest, odp1]);
-                }
-                else if (ph1 >= 36 && ph1 <= 70)
-                {
-                    MessageBox.Show("Wydaje mi sie ze jest to odpowiedz " + Questions.Quest[intQuest, odp1]);
-                }
-                else if (ph1 >= 71 && ph1 <= 80)
-                {
-                    MessageBox.Show("Wydaje mi sie, ze jest to odpowiedz " + Questions.Quest[intQuest, odp1] + ", ale reki sobie nie dam uciac.");
-                }
-                else if (ph1 >= 81 && ph1 <= 90)
-                {
-                    MessageBox.Show("Na twoim miejscu zaznaczylbym odpowiedz " + Questions.Quest[intQuest, odp1] + ", ale zawsze bylem slaby w takich grach.");
-                }
-                else if (ph1 >= 91 && ph1 <= 99)
-                {
-                    if (fifty == 0)
-                    {
-                        if (odp2 == odp1.ToString())
-                        {
-                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Questions.Quest[intQuest, 2]);
-                        }
-                        else if (odp3 == odp1.ToString())
-                        {
-                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz: " + Questions.Quest[intQuest, 3]);
-                        }
-                        else if (odp4 == odp1.ToString())
-                        {
-                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Questions.Quest[intQuest, 4]);
-                        }
-                        else if (odp5 == odp1.ToString())
-                        {
-                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Questions.Quest[intQuest, 1]);
-                        }
-                    }
-                    else
-                    {
-                        if (odp2 == odp1.ToString())
-                        {
-                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Answer2.Content + Answer3.Content + Answer4.Content);
-                        }
-                        else if (odp3 == odp1.ToString())
-                        {
-                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Answer1.Content + Answer3.Content + Answer4.Content);
-                        }
-                        else if (odp4 == odp1.ToString())
-                        {
-                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Answer1.Content + Answer2.Content + Answer4.Content);
-                        }
-                        else if (odp5 == odp1.ToString())
-                        {
-                            MessageBox.Show("Slyszalem ostatnio o tym w telewizji, to jest odpowiedz " + Answer1.Content + Answer2.Content + Answer3.Content);
-                        }
-                    }
-                }
-                else if (ph1 > 99)
-                {
-                    MessageBox.Show("Przepraszamy, numer do ktorego probujesz sie dodzwonic nie istnieje...");
-                }
-            }
-           
+          
+         
         
-
+        // odrzucenie dwóch błędnych odpowiedzi(losowych)
         private void fiftyfifty(object sender, RoutedEventArgs e)
         {
             FT.IsEnabled = false;
+            FT.Opacity = 0.25;
             fifty++;
             int an = 0;
             int a1 = 0;
             int a2 = 0;
             Random wrong = new Random();
-            switch (Questions.Quest[intQuest, 5])
+            switch (Questions.Quest[QuestionNumber, 5])
             {
                 case "1":
                     int[] tab1 = new int[] { 2, 3, 4 };
@@ -434,29 +296,33 @@ private void CurrentQuestion()
                     break;
             }
         }
-
+        //funkcje removeA1-4() odpowiedzialne za wyłączenie przycisków oraz usunięcie zawartości.
         private void removeA1()
         {
+            Questions.Quest[QuestionNumber, 1] = String.Empty;
             Answer1.Content = "";
             Answer1.IsEnabled = false;
         }
         private void removeA2()
         {
+            Questions.Quest[QuestionNumber, 2] = String.Empty;
             Answer2.Content = "";
             Answer2.IsEnabled = false;
         }
         private void removeA3()
         {
+            Questions.Quest[QuestionNumber, 3] = String.Empty;
             Answer3.Content = "";
             Answer3.IsEnabled = false;
 
         }
         private void removeA4()
         {
+            Questions.Quest[QuestionNumber, 4] = String.Empty;
             Answer4.Content = "";
             Answer4.IsEnabled = false;
         }
-
+        //ponowne uruchomienie przycisków
         private void EnableAnswers()
         {
             Answer1.IsEnabled = true;
@@ -464,9 +330,11 @@ private void CurrentQuestion()
             Answer3.IsEnabled = true;
             Answer4.IsEnabled = true;
         }
+        //wylosowanie nowego pytania
         private void reroll(object sender, RoutedEventArgs e)
         {
             RQ.IsEnabled = false;
+            RQ.Opacity = 0.25;
             CurrentQuestion();
             EnableAnswers();
         }

@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using MilionerzyLibrary;
 
 namespace Milionerzy_WPF
 {
@@ -23,6 +24,9 @@ namespace Milionerzy_WPF
         {
             InitializeComponent();
         }
+
+       
+        
 
         public void EndGame()
         {

@@ -27,6 +27,7 @@
         <Viewbox Grid.Row="1">
             <Grid>
                 <TextBox x:Name="namebox" TextAlignment="Left" Foreground="LightSlateGray" BorderThickness="1" BorderBrush="#FF1AA5A5" HorizontalAlignment="Center" Background="Transparent" VerticalAlignment="Center" Width="93" Margin="-19,0,-18,0"/>
+                <!-- kod na watermark https://stackoverflow.com/a/21672408 -->
                 <TextBlock IsHitTestVisible="False" Text="Wprowadź imię" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0,0,0,0" Foreground="LightSlateGray">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}">

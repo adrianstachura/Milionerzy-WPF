@@ -58,8 +58,6 @@
     <Compile Include="EndWindow.xaml.cs">
       <DependentUpon>EndWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Questions.cs" />
-    <Compile Include="Rewards.cs" />
     <Page Include="EndWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -127,6 +125,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="reroll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MilionerzyLibrary\MilionerzyLibrary.csproj">
+      <Project>{3fdbfd22-3e39-442f-af6b-5ccb17c39802}</Project>
+      <Name>MilionerzyLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
